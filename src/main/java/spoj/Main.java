@@ -15,7 +15,7 @@ public class Main {
         if (n >= 1 && n <= 100000) {
 
             GetSeries function = new GetSeries(scan, n);
-            System.out.println(function.getHighest());
+            System.out.println(function.getHighestProfit());
 
         } else System.exit(-1);
     }

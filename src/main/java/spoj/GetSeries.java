@@ -3,7 +3,7 @@ package spoj;
 import java.util.Scanner;
 
 /**
- * Created by Mateusz on 2017-05-27.
+ * Created by Mateusz on 2018-05-26.
  */
 public class GetSeries {
     private long n;
@@ -20,17 +20,54 @@ public class GetSeries {
     }
 
 
-    public long getHighest() {
+    public long getHighestProfit() {
         long profit;
         for(int i = 0; i<n; i++) {
-            profit = scan.nextInt();
-            current += profit;
-            if (current < 0)
-                current = 0;
-            if (current > highest)
-                highest = current;
+            profit = this.scan.nextInt();
+            setCurrentSum(profit);
+            if (getCurrent() < 0)
+                setCurrent(0);
+            if (getCurrent() > getHighest())
+                setHighest(getCurrent());
         }
-        return highest;
+        return getHighest();
 
+    }
+
+
+    private long getHighest() {
+        return highest;
+    }
+
+    public long getN() {
+        return n;
+    }
+
+    public void setN(long n) {
+        this.n = n;
+    }
+
+    private long getCurrent() {
+        return current;
+    }
+
+    private void setCurrentSum(long a){
+        this.current+=a;
+    }
+
+    private void setCurrent(long current) {
+        this.current = current;
+    }
+
+    private void setHighest(long highest) {
+        this.highest = highest;
+    }
+
+    public Scanner getScan() {
+        return scan;
+    }
+
+    public void setScan(Scanner scan) {
+        this.scan = scan;
     }
 }
